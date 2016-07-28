@@ -1,0 +1,102 @@
+package com.example.rnd.kkmrtthailand;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    //this for mini
+    private String[] ageMenminiMarathon = new String[]{"12-13", "14-15", "16-17", "18-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65 Up.", "เดินหรือวิ่งเพื่อสุขภาพไม่จำกัดอายุ"};
+    private String[] ageMaleminiMarathon = new String[]{"12-13", "14-15", "16-19", "20-29", "30-39", "40-49", "50-59", "60 Up.", "เดินหรือวิ่งเพื่อสุขภาพไม่จำกัดอายุ"};
+
+
+    //this for halfmarathon
+    private String[] ageMenhalfMarathon = new String[]{"16-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65 Up.", "เดินหรือวิ่งเพื่อสุขภาพไม่จำกัดอายุ"};
+    private String[] ageMalehalfMarathon = new String[]{"16-29", "30-39", "40-44", "45-49", "50-54", "55-59", "60 Up.", "เดินหรือวิ่งเพื่อสุขภาพไม่จำกัดอายุ"};
+
+
+    //this for marathon
+    private String[] MenMarathon = new String[]{"18-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65 Up.", "เดินหรือวิ่งเพื่อสุขภาพไม่จำกัดอายุ"};
+    private String[] MaleMarathon = new String[]{"18-29", "30-39", "40-44", "45-49", "50-54", "55-59", "60 Up.", "เดินหรือวิ่งเพื่อสุขภาพไม่จำกัดอายุ"};
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button btnMenMRT = (Button)findViewById(R.id.btnMM);
+        btnMenMRT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Two.class);
+                ArrayList<String> ar = new ArrayList<String>();
+                intent.putStringArrayListExtra("Exam",ar);
+                startActivity(intent);
+            }
+        });
+
+        Button btnMaleMRT = (Button)findViewById(R.id.btnMFM);
+        btnMaleMRT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Three.class);
+                ArrayList<String> aa = new ArrayList<String>();
+                intent.putStringArrayListExtra("Exm",aa);
+                startActivity(intent);
+            }
+        });
+
+        Button btnMenhalf = (Button)findViewById(R.id.btnHM);
+        btnMenhalf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Four.class);
+                ArrayList<String> aa = new ArrayList<String>();
+                intent.putStringArrayListExtra("Exm",aa);
+                startActivity(intent);
+
+            }
+        });
+        Button btnMalehalf = (Button)findViewById(R.id.btnHFM);
+        btnMalehalf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Five.class);
+                ArrayList<String> aa = new ArrayList<String>();
+                intent.putStringArrayListExtra("Exm",aa);
+                startActivity(intent);
+            }
+        });
+
+        Button btnMiniMen = (Button)findViewById(R.id.btnMNM);
+        btnMiniMen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Six.class);
+                ArrayList<String> aa = new ArrayList<String>();
+                intent.putStringArrayListExtra("Exm",aa);
+                startActivity(intent);
+            }
+        });
+
+        Button btnMaleMini = (Button)findViewById(R.id.btnMNFM);
+        btnMaleMini.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Seven.class);
+                ArrayList<String> aa = new ArrayList<String>();
+                intent.putStringArrayListExtra("Exm",aa);
+                startActivity(intent);
+            }
+        });
+
+    }
+}
